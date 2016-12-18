@@ -59,7 +59,8 @@ header .top-header {
   header .top-header .plus-icon {
     display: inline-block;
     border: 1px solid #F48254;
-    padding: 1em; }
+    padding: 1em;
+    float: right; }
 
 header .main-nav {
   background: #3A3A3C; }
