@@ -1,3 +1,37 @@
-body {
-  background-color: #333;
+@import "partials/clearfix";
+@import "partials/reset";
+
+$topHeaderBackground:#fff;
+$mainNavBackground:#3A3A3C;
+$plusIconBorder:#F48254;
+$textLight: #fff;
+
+header{
+  .top-header{
+    background: $topHeaderBackground;
+    text-align: center;
+    .logo{
+      margin: auto;
+      display: inline-block;
+    }
+    .plus-icon{
+      display: inline-block;
+      border: 1px solid $plusIconBorder;
+      padding: 1em;
+
+    }
+
+  }
+  .main-nav{
+    background: $mainNavBackground;
+    ul{
+      text-align: center;
+    }
+    li{
+      display: inline-block;
+      color: $textLight;
+      padding: 1em 2em;
+      text-transform: uppercase;
+    }
+  }
 }
