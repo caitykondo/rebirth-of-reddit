@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Oswald");
 .group:after {
   content: "";
   display: table;
@@ -50,24 +51,74 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+body {
+  background-image: url("../assets/bg.jpg"); }
+
 header .top-header {
   background: #fff;
-  text-align: center; }
+  text-align: center;
+  background: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+  height: 65px; }
   header .top-header .logo {
-    margin: auto;
+    float: left;
     display: inline-block; }
+    @media (min-width: 768px) {
+      header .top-header .logo {
+        float: none;
+        text-align: center; } }
   header .top-header .plus-icon {
     display: inline-block;
     border: 1px solid #F48254;
-    padding: 1em;
-    float: right; }
+    height: 32px;
+    width: 32px;
+    float: right;
+    color: #B5442C;
+    font-weight: 400;
+    font-size: 2em;
+    margin: 10px 10px 0 0; }
 
 header .main-nav {
-  background: #3A3A3C; }
+  background: #3A3A3C;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25); }
   header .main-nav ul {
     text-align: center; }
   header .main-nav li {
+    font-family: "Oswald", sans-serif;
     display: inline-block;
-    color: #fff;
-    padding: 1em 2em;
-    text-transform: uppercase; }
+    color: #808080;
+    padding: 15px 20px;
+    margin: 0;
+    border-sizing: border-box;
+    text-transform: uppercase;
+    letter-spacing: 0.5px; }
+    header .main-nav li:first-child, header .main-nav li:nth-child(2) {
+      border-right: 1px solid #808080; }
+      @media (min-width: 768px) {
+        header .main-nav li:first-child, header .main-nav li:nth-child(2) {
+          border: none; } }
+
+#main {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; }
+  #main .articleContainer {
+    box-sizing: border-box;
+    background: #fff;
+    padding: 25px;
+    flex: 0 0 90%;
+    max-width: 450px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); }
+    @media (min-width: 550px) {
+      #main .articleContainer {
+        flex: 1 0 50%; } }
+    #main .articleContainer .articleImage {
+      height: 225px;
+      width: 100%;
+      background-size: cover; }
+    #main .articleContainer h2 {
+      font-family: "Oswald", sans-serif;
+      font-size: 1.25em;
+      padding: 0 0 0.5em 0; }

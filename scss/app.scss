@@ -1,37 +1,121 @@
 @import "partials/clearfix";
 @import "partials/reset";
 
+@import url('https://fonts.googleapis.com/css?family=Lato|Oswald');
+
+
 $topHeaderBackground:#fff;
 $mainNavBackground:#3A3A3C;
+$articleBackground: #fff;
 $plusIconBorder:#F48254;
 $textLight: #fff;
+$textGrey: #808080;
+$OswaldFontFamily: 'Oswald', sans-serif;
+$LatoFontFamily: 'Lato', sans-serif;
+$articleShadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+$navShadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+$textRed: #B5442C;
+
+
+body {
+  background-image: url('../assets/bg.jpg');
+
+}
 
 header{
+
   .top-header{
     background: $topHeaderBackground;
     text-align: center;
+    background: $navShadow;
+    height: 65px;
+
     .logo{
-      margin: auto;
+      float: left;
       display: inline-block;
+      @media(min-width:768px) {
+        float: none;
+        text-align: center;
+      }
     }
+
     .plus-icon{
       display: inline-block;
       border: 1px solid $plusIconBorder;
-      padding: 1em;
-
+      height: 32px;
+      width: 32px;
+      float: right;
+      color: $textRed;
+      font-weight: 400;
+      font-size: 2em;
+      margin: 10px 10px 0 0;
     }
-
   }
   .main-nav{
     background: $mainNavBackground;
+    box-shadow: $navShadow;
+
     ul{
       text-align: center;
     }
+
     li{
+      font-family: $OswaldFontFamily;
       display: inline-block;
-      color: $textLight;
-      padding: 1em 2em;
+      color: $textGrey;
+      padding: 15px 20px;
+      margin: 0;
+      border-sizing: border-box;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
+      &:first-child, &:nth-child(2){
+        border-right: 1px solid $textGrey;
+        @media(min-width:768px) {
+          border: none;
+        }
+      }
+
+    }
+  }
+}
+
+#main {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  .articleContainer{
+    box-sizing: border-box;
+    background: $articleBackground;
+    padding: 25px;
+    flex: 0 0 90%;
+    max-width: 450px;
+    margin: 20px auto;
+    box-shadow: $articleShadow;
+
+      @media(min-width: 550px){
+        flex: 1 0 50%;
+      }
+
+      @media(min-width: 700px){
+
+      }
+
+    .articleImage{
+      height: 225px;
+      width: 100%;
+      background-size: cover;
+    }
+
+    h2 {
+      font-family: $OswaldFontFamily;
+      font-size: 1.25em;
+      padding: 0 0 0.5em 0 ;
+    }
+    .articleAuthor{
+
     }
   }
 }

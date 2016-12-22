@@ -1,4 +1,4 @@
-let body = document.getElementById('body');
+let main = document.getElementById('main');
 
 
 
@@ -11,13 +11,14 @@ function reqListener() {
     // New Container
     let articleContainer = document.createElement('div');
     articleContainer.className ='articleContainer';
-    body.appendChild(articleContainer);
+    main.appendChild(articleContainer);
 
     // Image >> PUT A FALLBACK DEFAULT IMAGE LATER
     let articleImageURL = article[i].data.preview.images[0].source.url;
-    let articleImage = document.createElement('img');
+    let articleImage = document.createElement('div');
+    articleImage.className = 'articleImage';
     articleContainer.appendChild(articleImage);
-    articleImage.src = articleImageURL;
+    articleImage.style.backgroundImage = `url(${articleImageURL})`;
 
     // Headline
     let articleTitle = document.createElement('h2')
@@ -27,7 +28,7 @@ function reqListener() {
     // Author
     let articleAuthor = document.createElement('span');
     articleAuthor.className = 'articleAuthor';
-    articleAuthor.innerHTML = article[i].data.author;
+    articleAuthor.innerHTML = `by ${article[i].data.author}`;
     articleContainer.appendChild(articleAuthor);
 
     // Date
