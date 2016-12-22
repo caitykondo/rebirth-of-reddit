@@ -27,15 +27,25 @@ header{
   .top-header{
     background: $topHeaderBackground;
     text-align: center;
-    background: $navShadow;
     height: 65px;
-
     .logo{
       float: left;
       display: inline-block;
-      @media(min-width:768px) {
+      position: relative;
+      @media(min-width: 550px){
         float: none;
         text-align: center;
+        &:after{
+          content: '';
+          position: absolute;
+          background: url('../assets/header_bg.svg');
+          height: 10px;
+          width: 410px;
+          top: 25px;
+          bottom: 0;
+          right: 0;
+          left: -145px;
+        }
       }
     }
 
@@ -81,10 +91,11 @@ header{
 
 #main {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: wrap;
   align-items: center;
   justify-content: space-between;
   position: relative;
+  padding: 20px 0 0 0;
       @media(min-width: 700px){
         max-width: 670px;
         margin: auto;
@@ -96,9 +107,10 @@ header{
     padding: 25px;
     flex: 0 0 90%;
     max-width: 450px;
+    height: 400px;
     margin: 20px auto;
     box-shadow: $articleShadow;
-
+    position: relative;
       @media(min-width: 550px){
         flex: 0 0 48%;
       }
@@ -113,12 +125,13 @@ header{
     h2 {
       font-family: $OswaldFontFamily;
       font-size: 1.25em;
-      padding: 0 0 0.5em 0 ;
+      padding: 1.25em 0 0.5em 0;
     }
-    .articleAuthor{
+    h3{
       font-family: $LatoFontFamily;
       font-weight: 400;
       color: $textGrey;
+      font-size: .875em;
     }
   }
 }

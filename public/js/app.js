@@ -23,28 +23,30 @@ function reqListener() {
     articleImage.style.backgroundImage = `url(${articleImageURL})`;
 
     // Headline
-    let articleTitle = document.createElement('h2')
+    let articleTitle = document.createElement('h2');
     articleTitle.innerHTML = article[i].data.title;
     articleContainer.appendChild(articleTitle);
 
+    let subheading = document.createElement('h3');
+    articleContainer.appendChild(subheading);
     // Author
     let articleAuthor = document.createElement('span');
     articleAuthor.className = 'articleAuthor';
     articleAuthor.innerHTML = `by ${article[i].data.author}`;
-    articleContainer.appendChild(articleAuthor);
+    subheading.appendChild(articleAuthor);
 
     // Date
     let articleCreated = document.createElement('span');
     articleCreated.className = 'articleCreated';
     let date = moment.unix(article[i].data.created);
     articleCreated.innerHTML = moment(date).fromNow();
-    articleContainer.appendChild(articleCreated);
+    subheading.appendChild(articleCreated);
 
     // Comments
     let articleComments = document.createElement('span');
     articleComments.className = 'articleComments';
     articleComments.innerHTML = article[i].data.num_comments;
-    articleContainer.appendChild(articleComments);
+    subheading.appendChild(articleComments);
 
     // Description
   }
