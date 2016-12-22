@@ -5,11 +5,10 @@ function reqListener() {
   let articleList = JSON.parse(this.responseText);
   let article = articleList.data.children;
   console.log(article[0]);
-  console.log(article[0].data.created);
-
-
+  console.log(article[0].data.permalink);
 
   for (var i = article.length - 1; i >= 0; i--) {
+
     // New Container
     let articleContainer = document.createElement('div');
     articleContainer.className ='articleContainer';
@@ -23,9 +22,12 @@ function reqListener() {
     articleImage.style.backgroundImage = `url(${articleImageURL})`;
 
     // Headline
+    let a = document.createElement('a');
+    a.href = `http://reddit.com${article[0].data.permalink}`;
+    articleContainer.appendChild(a);
     let articleTitle = document.createElement('h2');
     articleTitle.innerHTML = article[i].data.title;
-    articleContainer.appendChild(articleTitle);
+    a.appendChild(articleTitle);
 
     let subheading = document.createElement('h3');
     articleContainer.appendChild(subheading);

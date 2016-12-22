@@ -9,12 +9,14 @@ $mainNavBackground:#3A3A3C;
 $articleBackground: #fff;
 $plusIconBorder:#F48254;
 $textLight: #fff;
+$textDark: #3A3A3C;
 $textGrey: #808080;
+$textRed: #B5442C;
 $OswaldFontFamily: 'Oswald', sans-serif;
 $LatoFontFamily: 'Lato', sans-serif;
 $articleShadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
 $navShadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
-$textRed: #B5442C;
+$articleHoverBorder: #FBB040;
 
 
 body {
@@ -28,6 +30,7 @@ header{
     background: $topHeaderBackground;
     text-align: center;
     height: 65px;
+
     .logo{
       float: left;
       display: inline-block;
@@ -78,8 +81,10 @@ header{
       border-sizing: border-box;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+
       &:first-child, &:nth-child(2){
         border-right: 1px solid $textGrey;
+
         @media(min-width:768px) {
           border: none;
         }
@@ -96,6 +101,7 @@ header{
   justify-content: space-between;
   position: relative;
   padding: 20px 0 0 0;
+
       @media(min-width: 700px){
         max-width: 670px;
         margin: auto;
@@ -111,10 +117,14 @@ header{
     margin: 20px auto;
     box-shadow: $articleShadow;
     position: relative;
+
+      &:hover {
+        outline: 5px solid $articleHoverBorder;
+      }
+
       @media(min-width: 550px){
         flex: 0 0 48%;
       }
-
 
     .articleImage{
       height: 225px;
@@ -122,11 +132,20 @@ header{
       background-size: cover;
     }
 
-    h2 {
-      font-family: $OswaldFontFamily;
-      font-size: 1.25em;
-      padding: 1.25em 0 0.5em 0;
+    a {
+      color: $textDark;
+      text-decoration: none;
+      h2{
+        font-family: $OswaldFontFamily;
+        font-size: 1.25em;
+        padding: 1.25em 0 0.5em 0;
+        line-height: 1.125em;
+        &:hover{
+          color: $textGrey;
+        }
+      }
     }
+
     h3{
       font-family: $LatoFontFamily;
       font-weight: 400;
