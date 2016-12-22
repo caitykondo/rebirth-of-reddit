@@ -85,6 +85,10 @@ header{
   align-items: center;
   justify-content: space-between;
   position: relative;
+      @media(min-width: 700px){
+        max-width: 670px;
+        margin: auto;
+      }
 
   .articleContainer{
     box-sizing: border-box;
@@ -96,12 +100,9 @@ header{
     box-shadow: $articleShadow;
 
       @media(min-width: 550px){
-        flex: 1 0 50%;
+        flex: 0 0 48%;
       }
 
-      @media(min-width: 700px){
-
-      }
 
     .articleImage{
       height: 225px;
@@ -115,7 +116,9 @@ header{
       padding: 0 0 0.5em 0 ;
     }
     .articleAuthor{
-
+      font-family: $LatoFontFamily;
+      font-weight: 400;
+      color: $textGrey;
     }
   }
 }

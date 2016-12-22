@@ -1,11 +1,13 @@
+
 let main = document.getElementById('main');
-
-
 
 function reqListener() {
   let articleList = JSON.parse(this.responseText);
   let article = articleList.data.children;
-  console.log(article.length);
+  console.log(article[0]);
+  console.log(article[0].data.created);
+
+
 
   for (var i = article.length - 1; i >= 0; i--) {
     // New Container
@@ -34,8 +36,8 @@ function reqListener() {
     // Date
     let articleCreated = document.createElement('span');
     articleCreated.className = 'articleCreated';
-    articleCreated.innerHTML = article[i].data.created;
-    let date = article[i].data.created;
+    let date = moment.unix(article[i].data.created);
+    articleCreated.innerHTML = moment(date).fromNow();
     articleContainer.appendChild(articleCreated);
 
     // Comments
