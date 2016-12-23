@@ -81,6 +81,7 @@ header{
       border-sizing: border-box;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      cursor: pointer;
 
       &:first-child, &:nth-child(2){
         border-right: 1px solid $textGrey;

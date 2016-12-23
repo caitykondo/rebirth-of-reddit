@@ -41,13 +41,13 @@ function reqListener() {
     let articleCreated = document.createElement('span');
     articleCreated.className = 'articleCreated';
     let date = moment.unix(article[i].data.created);
-    articleCreated.innerHTML = moment(date).fromNow();
+    articleCreated.innerHTML = ` &#8226; ${moment(date).fromNow()}`;
     subheading.appendChild(articleCreated);
 
     // Comments
     let articleComments = document.createElement('span');
     articleComments.className = 'articleComments';
-    articleComments.innerHTML = article[i].data.num_comments;
+    articleComments.innerHTML = ` &#8226; ${article[i].data.num_comments} comments`;
     subheading.appendChild(articleComments);
 
     // Description
@@ -57,3 +57,33 @@ let oReq = new XMLHttpRequest();
 oReq.addEventListener("load", reqListener);
 oReq.open("GET", 'https://www.reddit.com/r/aww.json');
 oReq.send();
+
+let randomLink = document.getElementById('random');
+randomLink.addEventListener('click', () => {
+  main.innerHTML = "";
+
+  randomReq = new XMLHttpRequest();
+  randomReq.addEventListener("load", reqListener);
+  randomReq.open("GET", 'https://www.reddit.com/r/pic.json');
+  randomReq.send();
+});
+
+let myBoardsLink = document.getElementById('myBoards');
+myBoardsLink.addEventListener('click', () => {
+  main.innerHTML = "";
+
+  myBoardsReq = new XMLHttpRequest();
+  myBoardsReq.addEventListener("load", reqListener);
+  myBoardsReq.open("GET", 'https://www.reddit.com/r/Art.json');
+  myBoardsReq.send();
+});
+
+let getTheAppLink = document.getElementById('getTheApp');
+getTheAppLink.addEventListener('click', () => {
+  main.innerHTML = "";
+
+  getTheAppReq = new XMLHttpRequest();
+  getTheAppReq.addEventListener("load", reqListener);
+  getTheAppReq.open("GET", 'https://www.reddit.com/r/dataisbeautiful.json');
+  getTheAppReq.send();
+});

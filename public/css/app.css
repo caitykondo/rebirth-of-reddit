@@ -100,7 +100,8 @@ header .main-nav {
     margin: 0;
     border-sizing: border-box;
     text-transform: uppercase;
-    letter-spacing: 0.5px; }
+    letter-spacing: 0.5px;
+    cursor: pointer; }
     header .main-nav li:first-child, header .main-nav li:nth-child(2) {
       border-right: 1px solid #808080; }
       @media (min-width: 768px) {
